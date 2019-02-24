@@ -7,21 +7,20 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "competition_dj")
-public class DJ implements Serializable {
+@Table(name = "competition_person")
+public class Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     @Column(name = "name")
     @NotNull
     @NotBlank
-    @Id
     private String name;
-
-    @ManyToOne
-    @Id
-    private CompetitionCategory competitionCategory;
 }

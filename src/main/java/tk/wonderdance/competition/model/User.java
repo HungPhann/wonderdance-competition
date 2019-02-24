@@ -18,9 +18,9 @@ public class User extends DateAudit {
     @Id
     private long id;
 
-    @OneToMany(mappedBy = "host", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "host", fetch = FetchType.LAZY, orphanRemoval=true)
     private Set<Competition> hostCompetitions;
 
-    @OneToMany(mappedBy = "creator", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "creator", fetch = FetchType.LAZY, orphanRemoval=true)
     private Set<Team> teams;
 }

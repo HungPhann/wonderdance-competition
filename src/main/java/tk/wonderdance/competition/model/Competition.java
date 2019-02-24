@@ -57,7 +57,7 @@ public class Competition extends DateAudit {
     @Embedded
     private Address address;
 
-    @OneToMany(mappedBy = "competition", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "competition", fetch = FetchType.LAZY, orphanRemoval=true)
     private Set<CompetitionCategory> competitionCategories;
 
 }

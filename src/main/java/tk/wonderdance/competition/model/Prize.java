@@ -12,9 +12,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "competition_category_prize", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"title"})
-})
+@Table(name = "competition_category_prize")
 public class Prize {
 
     @Id
@@ -33,4 +31,7 @@ public class Prize {
 
     @ManyToOne
     private CompetitionCategory competitionCategory;
+
+    @ManyToOne
+    private Competition competition;
 }
